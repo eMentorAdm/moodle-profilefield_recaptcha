@@ -1,1 +1,1 @@
-# moodle-profilefield_recaptcha
+# Recaptcha V3 - profile field
