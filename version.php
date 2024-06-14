@@ -28,6 +28,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'profilefield_recaptcha';
 $plugin->release = '0.1.0';
-$plugin->version = 2024061107;
+$plugin->version = 2024061400;
 $plugin->requires = 2021051700;
 $plugin->maturity = MATURITY_STABLE;
