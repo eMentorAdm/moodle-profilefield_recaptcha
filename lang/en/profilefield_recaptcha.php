@@ -27,3 +27,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Recaptcha v3';
+$string['site_key'] = 'Site Key';
+$string['secret_key'] = 'Secret Key';
+$string['pluginname'] = 'Score Threshold';

@@ -25,34 +25,9 @@
  */
 class profile_field_recaptcha extends profile_field_base {
 
-
     private const RECAPTCHA_API_URL = "https://www.google.com/recaptcha/api.js"; 
 
     private const RECAPTCHA_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify"; 
-
-    /**
-     * Overwrite the base class to display the data for this field
-     */
-    public function display_data() {
-        // // Default formatting.
-        // $data = format_string($this->data);
-
-        // // Are we creating a link?
-        // if (!empty($this->field->param4) && !empty($data)) {
-
-        //     // Define the target.
-        //     if (! empty($this->field->param5)) {
-        //         $target = 'target="'.$this->field->param5.'"';
-        //     } else {
-        //         $target = '';
-        //     }
-
-        //     // Create the link.
-        //     $data = '<a href="'.str_replace('$$', urlencode($data), $this->field->param4).'" '.$target.'>'.htmlspecialchars($data).'</a>';
-        // }
-
-        // return $data;
-    }
 
     /**
      * Add fields for editing a text profile field.
@@ -84,10 +59,15 @@ class profile_field_recaptcha extends profile_field_base {
 
     }
 
+    /**
+     * Validate the recaptcha score
+     * @param user $usernew
+     * @return array $errors
+     */
     public function edit_validate_field($usernew) {
        
-        $secret_key =  $this->field->param2;
-        $recaptcha_score_threshold =  $this->field->param3;
+        $secret_key = $this->field->param2;
+        $recaptcha_score_threshold = $this->field->param3;
         $errors = array();
 
         $id = optional_param('id', 0, PARAM_INT);
@@ -97,7 +77,6 @@ class profile_field_recaptcha extends profile_field_base {
         $recaptcha_response = required_param('recaptcha_response', PARAM_TEXT);
 
         try {
-
             $recaptcha = file_get_contents(self::RECAPTCHA_VERIFY_URL . '?secret=' . $secret_key . '&response=' . $recaptcha_response);
             $recaptcha = json_decode($recaptcha);
 

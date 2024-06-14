@@ -26,19 +26,19 @@
 class profile_define_recaptcha extends profile_define_base {
 
     /**
-     * Add elements for creating/editing a text profile field.
+     * Custom configurations
      *
      * @param MoodleQuickForm $form
      */
     public function define_form_specific($form) {
-        // Default data.
-        $form->addElement('text', 'param1', "Site key", 'size="50"');
+
+        $form->addElement('text', 'param1', get_string("site_key","profilefield_recaptcha"), 'size="50"');
         $form->setType('param1', PARAM_TEXT);
 
-        $form->addElement('text', 'param2', "Secret key", 'size="50"');
+        $form->addElement('text', 'param2', get_string("secret_key","profilefield_recaptcha"), 'size="50"');
         $form->setType('param2', PARAM_TEXT);
 
-        $form->addElement('text', 'param3', "Treshold", 'size="50"');
+        $form->addElement('text', 'param3', get_string("score_threshold","profilefield_recaptcha"), 'size="50"');
         $form->setType('param3', PARAM_FLOAT);
 
     }
