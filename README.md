@@ -5,7 +5,7 @@ This Moodle plugin adds a custom user profile field that integrates Google's reC
 ## Installation
 
 1. **Download and Install the Plugin:**
-   - Download the plugin files and place them in the appropriate directory in your Moodle installation (e.g., `your_moodle_directory/user/profile/field/recaptcha_v3`).
+   - Download the plugin files and place them in the appropriate directory in your Moodle installation (e.g., `your_moodle_directory/user/profile/field/recaptcha`).
    - Navigate to the Site Administration area of your Moodle site.
    - Go to `Site administration -> Plugins -> Install plugins` and follow the prompts to complete the installation.
 
